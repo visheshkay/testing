@@ -18,7 +18,10 @@ pipeline{
         }
         stage('Run Tests'){
             steps{
-                sh 'python3 -m pytest -v'
+                sh '''
+                    . venv/bin/activate
+                    python3 -m pytest --junitxml=report.xml
+                    '''
             }
         }
     }
