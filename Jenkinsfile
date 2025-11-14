@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Load code'){
             steps{
-                git 'https://github.com/visheshkay/testing.git'
+                checkout scm
             }
         }
         stage('Build Docker Image'){
